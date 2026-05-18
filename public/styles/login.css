@@ -1,0 +1,469 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/health.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+    
+}
+
+/* Основной контейнер с ограничением 80vw */
+.login-container {
+    display: flex;
+    width: 80vw;
+    max-width: 60vw;
+    height: 85vh;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Левая часть с изображением */
+.login-image-section {
+    flex: 1;
+}
+
+.login-image {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Правая часть с формой */
+.login-form-section {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+}
+
+.login-form-wrapper {
+    width: 100%;
+    max-width: 380px;
+}
+
+.login-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 2rem;
+    line-height: 1.3;
+}
+
+/* Форма */
+.login-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-label {
+    display: block;
+    color: #374151;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    border: 1px solid #e2e8f0;
+    font-size: 1rem;
+    color: #1f2937;
+    transition: all 0.2s ease;
+}
+
+.form-input:focus {
+    border-color: #3b82f6;
+    background-color: white;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-input::placeholder {
+    color: #94a3b8;
+}
+
+/* Ссылка "Забыли пароль?" */
+.forgot-password {
+    text-align: right;
+    margin-bottom: 1.5rem;
+}
+
+.forgot-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #3b82f6;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.forgot-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* Кнопка входа */
+.login-btn {
+    width: 100%;
+    padding: 0.875rem;
+    background-color: #3b82f6;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.login-btn:hover {
+    background-color: #2563eb;
+}
+
+.login-btn:active {
+    transform: translateY(1px);
+}
+
+/* Разделитель */
+.login-divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    color: #94a3b8;
+}
+
+.login-divider::before,
+.login-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.login-divider span {
+    padding: 0 1rem;
+    font-size: 0.875rem;
+}
+
+/* Кнопка Google */
+.google-btn {
+    width: 100%;
+    padding: 0.875rem;
+    background-color: white;
+    gap: 0.5vw;
+    color: #374151;
+    font-weight: 500;
+    font-size: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.google-btn:hover {
+    background-color: #f8f9fa;
+    border-color: #cbd5e1;
+}
+
+.google-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.75rem;
+}
+
+/* Ссылка на регистрацию */
+.register-link {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.register-link a {
+    color: #3b82f6;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 0.25rem;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Футер */
+.login-footer {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+/* Анимация появления */
+.login-form-wrapper {
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Десктоп версия - показываем изображение */
+@media (min-width: 1024px) {
+    .login-image-section {
+        display: block;
+    }
+}
+
+/* Мобильная версия */
+@media (max-width: 1023px) {
+    .login-container {
+        width: 90vw;
+        min-height: auto;
+    }
+    
+    .login-form-section {
+        min-height: auto;
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+        align-items: flex-start;
+        background-color: white;
+    }
+    
+    .login-container {
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    .login-form-section {
+        padding: 1.5rem 1rem;
+    }
+    
+    .login-title {
+        font-size: 1.5rem;
+    }
+}
+/* Уведомление об ошибке в правом верхнем углу */
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    min-width: 320px;
+    max-width: 450px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+    backdrop-filter: blur(10px);
+    animation: slideInRight 0.3s ease-out;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.alert:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
+}
+
+/* Ошибка (красная) */
+.alert-danger {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    border-left: 4px solid #f87171;
+}
+
+/* Успех (зелёная) */
+.alert-success {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border-left: 4px solid #34d399;
+}
+
+/* Предупреждение (жёлтая) */
+.alert-warning {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    border-left: 4px solid #fbbf24;
+}
+
+/* Информация (синяя) */
+.alert-info {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    border-left: 4px solid #60a5fa;
+}
+
+/* Иконки */
+.alert::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.alert-danger::before {
+    content: "\f071"; /* иконка warning */
+}
+
+.alert-success::before {
+    content: "\f00c"; /* иконка check */
+}
+
+.alert-warning::before {
+    content: "\f06a"; /* иконка exclamation */
+}
+
+.alert-info::before {
+    content: "\f05a"; /* иконка info */
+}
+
+/* Кнопка закрытия */
+.alert-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 0 5px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    font-family: sans-serif;
+}
+
+.alert-close:hover {
+    opacity: 1;
+}
+
+/* Анимация появления */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Анимация исчезновения */
+.alert.hide {
+    animation: slideOutRight 0.3s ease-out forwards;
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Адаптив для мобильных устройств */
+@media (max-width: 640px) {
+    .alert {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        min-width: auto;
+        max-width: none;
+    }
+}
+
+/* Темная тема */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #0f172a;
+    }
+    
+    .login-container {
+        background-color: #1e293b;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .login-logo,
+    .login-title,
+    .form-label,
+    .form-input {
+        color: #f1f5f9;
+    }
+    
+    .form-input {
+        background-color: #334155;
+        border-color: #475569;
+    }
+    
+    .form-input:focus {
+        background-color: #1e293b;
+        border-color: #3b82f6;
+    }
+    
+    .forgot-link {
+        color: #60a5fa;
+    }
+    
+    .google-btn {
+        background-color: #334155;
+        border-color: #475569;
+        color: #f1f5f9;
+    }
+    
+    .google-btn:hover {
+        background-color: #475569;
+    }
+    
+    .register-link {
+        color: #cbd5e1;
+    }
+    
+    .login-footer {
+        color: #94a3b8;
+        border-top-color: #334155;
+    }
+}
